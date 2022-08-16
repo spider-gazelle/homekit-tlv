@@ -99,7 +99,7 @@ module Homekit::TLV
         current_atom.next_fragment = next_atom
       else
         # Don't include the seperators in the list
-        atoms << next_atom unless next_atom.type_id == 0xFF_u8
+        atoms << next_atom unless next_atom.separator?
       end
 
       # If the length of the atom is 255 then the next atom might be a continuation
